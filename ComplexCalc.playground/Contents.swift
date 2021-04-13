@@ -34,9 +34,9 @@ class Calculator {
     }
     
     func multiply(_ nums: [Int]) -> Int {
-        var total = 0
+        var total = 1
         for i in nums {
-            total += i
+            total *= i
         }
         return total
     }
@@ -69,18 +69,18 @@ class Calculator {
         return (leftFirst - rightFirst, leftSecond - rightSecond)
     }
     
-    func add(lhs: Dictionary<String, Int>, rhs: Dictionary<String, Int>) -> Dictionary<String, Int> {
-        let x: Int = lhs["x"]! + rhs["x"]!
-        let y: Int = lhs["y"]! + rhs["y"]!
-        return ["x": x, "y": y]
-    }
-
-    func subtract(lhs: Dictionary<String, Int>, rhs: Dictionary<String, Int>) -> Dictionary<String, Int> {
-        let x: Int = lhs["x"]! - rhs["x"]!
-        let y: Int = lhs["y"]! - rhs["y"]!
-        return ["x": x, "y": y]
-    }
-    
+//    func add(lhs: Dictionary<String, Int>, rhs: Dictionary<String, Int>) -> Dictionary<String, Int> {
+//        let x: Int = lhs["x"]! + rhs["x"]!
+//        let y: Int = lhs["y"]! + rhs["y"]!
+//        return ["x": x, "y": y]
+//    }
+//
+//    func subtract(lhs: Dictionary<String, Int>, rhs: Dictionary<String, Int>) -> Dictionary<String, Int> {
+//        let x: Int = lhs["x"]! - rhs["x"]!
+//        let y: Int = lhs["y"]! - rhs["y"]!
+//        return ["x": x, "y": y]
+//    }
+//
     
     
 }
@@ -88,6 +88,7 @@ class Calculator {
 let calc = Calculator()  // Don't change this declaration name; it's used in all the tests below
 
 // ====> Add your own tests here if you wish <====
+calc.add([5, 4, 2, 1, 3]) == 15
 
 
 // ====> Do not modify code in this section <====
@@ -116,16 +117,16 @@ calc.avg([1]) == 1
 //calc.mathOp(args: [1, 1, 1, 1, 1], beg: 1, op: { $0 * $1 }) == 1
 //    // this is (((((1 op 1) op 1) op 1) op 1) op 1)
 
-let p1 = (5, 5)
-let p2 = (12, -27)
-let p3 = (-4, 4)
-let p4 = (0, 0)
-calc.add(lhs: p1, rhs: p2) == (17, -22)
-calc.subtract(lhs: p1, rhs: p2) == (-7, 32)
-calc.add(lhs: p4, rhs: p4) == (0, 0)
-calc.add(lhs: p3, rhs: p4) == (-4, 4)
-
-let pd1 = ["x": 5, "y": 5]
-let pd2 = ["x": -4, "y": 4]
-calc.add(lhs: pd1, rhs: pd2) == ["x": 1, "y": 9]
-calc.subtract(lhs: pd1, rhs: pd2) == ["x": 9, "y": 1]
+//let p1 = (5, 5)
+//let p2 = (12, -27)
+//let p3 = (-4, 4)
+//let p4 = (0, 0)
+//calc.add(lhs: p1, rhs: p2) == (17, -22)
+//calc.subtract(lhs: p1, rhs: p2) == (-7, 32)
+//calc.add(lhs: p4, rhs: p4) == (0, 0)
+//calc.add(lhs: p3, rhs: p4) == (-4, 4)
+//
+//let pd1 = ["x": 5, "y": 5]
+//let pd2 = ["x": -4, "y": 4]
+//calc.add(lhs: pd1, rhs: pd2) == ["x": 1, "y": 9]
+//calc.subtract(lhs: pd1, rhs: pd2) == ["x": 9, "y": 1]
